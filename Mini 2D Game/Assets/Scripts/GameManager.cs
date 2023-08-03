@@ -13,4 +13,9 @@ public class GameManager : MonoBehaviour
     }
 
     public GameObject player;
+    public Container inventory;
+    public ItemDragAndDropController itemDragAndDropController;
+    public DayNightController dayNightController;
+    public PlaceableObjectsReferenceManager poReferenceManger;
+    public OnScreenMessageSystem messageSystem;
 }

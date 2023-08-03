@@ -8,6 +8,9 @@ public class PickUpItem : MonoBehaviour
     [SerializeField] float speed = 5f; // Speed of the objects move toward the player
     [SerializeField] float pickUpDistance = 1.5f; // Distance that player can pick up
 
+    public Item item;
+    public int count = 1;
+
     private void Awake()
     {
         player = GameManager.instance.player.transform;
@@ -26,7 +29,20 @@ public class PickUpItem : MonoBehaviour
         
         if (distance < 0.1)
         {
+            if (GameManager.instance.inventory != null)
+            {
+                GameManager.instance.inventory.Add(item, count);
+            }
             Destroy(gameObject);
         }
+    }
+
+    public void Set(Item item, int count)
+    {
+        this.item = item;
+        this.count = count;
+
+        SpriteRenderer renderer = GetComponent<SpriteRenderer>();
+        renderer.sprite = item.icon;
     }
 }

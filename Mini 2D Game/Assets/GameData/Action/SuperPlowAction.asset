@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa22a2d04c816e94aafba31368c03cf4, type: 3}
+  m_Name: SuperPlowAction
+  m_EditorClassIdentifier: 
+  plowedTiles:
+  - {fileID: 11400000, guid: fab6aacf8211f26459d82fa78d5c0473, type: 2}
+  - {fileID: 11400000, guid: 9a2a1cb74ec153d408dfc2846c6d5d5d, type: 2}

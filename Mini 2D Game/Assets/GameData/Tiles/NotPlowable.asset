@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98c35c4b4a4c43043920fdf7a794fdf5, type: 3}
+  m_Name: NotPlowable
+  m_EditorClassIdentifier: 
+  tiles:
+  - {fileID: 11400000, guid: fab6aacf8211f26459d82fa78d5c0473, type: 2}
+  - {fileID: 11400000, guid: 7b02f9b98dffd614ca73bb297f681b2f, type: 2}
+  - {fileID: 11400000, guid: 7a999b0d2fbfe4d4ea8158b39f716174, type: 2}
+  - {fileID: 11400000, guid: 9bfac869cba945e4c9cc347e4ee9a85b, type: 2}
+  - {fileID: 11400000, guid: 37bc50963d497374cb7654bbdb24744c, type: 2}
+  - {fileID: 11400000, guid: 27f79507902aeac4ea3d8ff235d74cca, type: 2}
+  - {fileID: 11400000, guid: c19fc29cf6dd3f04788de97955c6b48f, type: 2}
+  - {fileID: 11400000, guid: 481de2bcd80168845a2ce24e7f312c29, type: 2}
+  - {fileID: 11400000, guid: 285e551c0b4c079489463aa419e6dafc, type: 2}
+  isPlowable: 0

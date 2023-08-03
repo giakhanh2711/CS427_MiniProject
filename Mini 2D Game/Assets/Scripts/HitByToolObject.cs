@@ -8,4 +8,9 @@ public class HitByToolObject : MonoBehaviour
     {
 
     }
+
+    public virtual bool CanBeHit(List<ResourceNodeType> types)
+    {
+        return true;
+    }
 }
