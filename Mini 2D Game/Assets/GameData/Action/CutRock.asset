@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 402ea7c48502e7d4cbc31d58cfe810f1, type: 3}
   m_Name: CutRock
   m_EditorClassIdentifier: 
+  energyCost: 20
   sizeOfInteractableArea: 1
   resourceTypes: 02000000
+  skillType: 1

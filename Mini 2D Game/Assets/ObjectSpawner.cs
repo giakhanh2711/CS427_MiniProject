@@ -9,10 +9,12 @@ public class ObjectSpawner : MonoBehaviour
 
     [SerializeField] GameObject[] spawnObjects;
     int length;
+    int curSpawnNumber = 0;
     [SerializeField] float probToSpawn = 0.5f;
     [SerializeField] int spawnCount = 1;
 
     [SerializeField] bool isSpawnOneTime = false;
+    [SerializeField] int spawnLimit = 10;
 
     private void Start()
     {
@@ -48,6 +50,11 @@ public class ObjectSpawner : MonoBehaviour
             position.y += UnityEngine.Random.Range(-spawnArea_height, spawnArea_height);
             transform.position = position;
             ///
+
+            ++curSpawnNumber;
+
+            if (curSpawnNumber >= spawnLimit)
+                return;
         }
     }
 

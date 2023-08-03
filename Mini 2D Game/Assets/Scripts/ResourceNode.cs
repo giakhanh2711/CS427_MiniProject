@@ -30,6 +30,13 @@ public class ResourceNode : HitByToolObject
             ItemSpawnManager.instance.SpawnItem(position, item, itemCountInOneDrop);
         }
 
+        //ObjectSpawner spawner = GetComponent<ObjectSpawner>();
+
+        //if (spawner != null)
+        //{
+        //    //spawner.Spawn
+        //}
+
         Destroy(gameObject);
     }
 

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +6,7 @@ using UnityEngine.Tilemaps;
 
 public class CharacterUseToolsController : MonoBehaviour
 {
+    CharacterLevel characterLevel;
     CharacterController2D characterController;
     Character character;
     Rigidbody2D rigidbody;
@@ -21,9 +22,11 @@ public class CharacterUseToolsController : MonoBehaviour
     [SerializeField] ToolAction onTilePickUp;
     [SerializeField] IconHighlight iconHighlight;
     [SerializeField] int weaponEnergyCost = 5;
+    [SerializeField] float toolTimeOut = 1f;
     
     Vector3Int selectedTilePosition;
     bool selectable;
+    float timer;
 
     private void Awake()
     {
@@ -33,10 +36,14 @@ public class CharacterUseToolsController : MonoBehaviour
         toolbarController = GetComponent<ToolbarController>();
         animator = GetComponent<Animator>();
         attackController = GetComponent<AttackController>();
+        characterLevel = GetComponent<CharacterLevel>();
     }
 
     private void Update()
     {
+        if (timer > 0f)
+            timer -= Time.deltaTime;
+
         if (Input.GetMouseButtonDown(0))
         {
             WeaponAction();
@@ -61,6 +68,9 @@ public class CharacterUseToolsController : MonoBehaviour
 
     private void WeaponAction()
     {
+        if (timer > 0f)
+            return;
+
         Item item = toolbarController.GetItemSelected;
         if (item == null)
             return;
@@ -73,6 +83,8 @@ public class CharacterUseToolsController : MonoBehaviour
         Vector2 position = rigidbody.position + characterController.lastMotionVector * offsetDistance;
 
         attackController.Attack(item.damageAmount, characterController.lastMotionVector);
+
+        timer = toolTimeOut;
     }
 
     private void SelectTile()
@@ -98,6 +110,9 @@ public class CharacterUseToolsController : MonoBehaviour
 
     private bool UseToolWorld()
     {
+        if (timer > 0f)
+            return false;
+
         Vector2 position = rigidbody.position + characterController.lastMotionVector * offsetDistance;
 
         Item item = toolbarController.GetItemSelected;
@@ -111,24 +126,31 @@ public class CharacterUseToolsController : MonoBehaviour
             return false;
         }
 
-        EnergyCost(item.onAction.energyCost);
+        EnergyCost(GetEnergyCost(item.onAction));
 
         animator.SetTrigger("act");
         bool isComplete = item.onAction.OnApply(position);
 
         if (isComplete)
         {
+            characterLevel.AddExperience(item.onAction.skillType, item.onAction.experienceGain); ;
+
             if (item.onItemUsed != null)
             {
                 item.onItemUsed.OnItemUsed(item, GameManager.instance.inventory);
             }
         }
 
+        timer = toolTimeOut;
+
         return isComplete;
     }
 
     private void UseToolGrid()
     {
+        if (timer > 0f)
+            return;
+
         Debug.Log("UseToolGrid called");
         if (selectable == true)
         {
@@ -146,19 +168,34 @@ public class CharacterUseToolsController : MonoBehaviour
                 return;
             }
 
-            EnergyCost(item.onTilemapAction.energyCost);
+            EnergyCost(GetEnergyCost(item.onTilemapAction));
 
             animator.SetTrigger("act");
             bool isComplete = item.onTilemapAction.OnApplyToTilemap(selectedTilePosition, tilemapReadController, item);
-            
+
             if (isComplete)
             {
+                characterLevel.AddExperience(item.onTilemapAction.skillType, item.onTilemapAction.experienceGain); ;
+
                 if (item.onItemUsed != null)
                 {
                     item.onItemUsed.OnItemUsed(item, GameManager.instance.inventory);
                 }
             }
         }
+
+        timer = toolTimeOut;
+    }
+
+    private int GetEnergyCost(ToolAction action)
+    {
+        int energyCost = action.energyCost;
+        energyCost -= characterLevel.GetLevel(action.skillType); // Càng lên level, energy cost càng giảm
+
+        if (energyCost < 0)
+            energyCost = 1;
+
+        return energyCost;
     }
 
     private void PickUpTile()

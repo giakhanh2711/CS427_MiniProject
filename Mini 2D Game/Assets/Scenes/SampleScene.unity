@@ -21784,6 +21784,7 @@ GameObject:
   - component: {fileID: 1958432232}
   - component: {fileID: 1958432233}
   - component: {fileID: 1958432234}
+  - component: {fileID: 1958432235}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -21986,6 +21987,7 @@ MonoBehaviour:
   onTilePickUp: {fileID: 11400000, guid: c8a642511720d9f43b4e17f2d41cc52a, type: 2}
   iconHighlight: {fileID: 2043167010}
   weaponEnergyCost: 5
+  toolTimeOut: 1
 --- !u!114 &1958432222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22176,6 +22178,30 @@ MonoBehaviour:
   inventoryPanel: {fileID: 2089876783}
   playerInventory: {fileID: 11400000, guid: f27b15bfb15c9384e956efbfa6ecd2f4, type: 2}
   inventoryItemsPanel: {fileID: 2089876788}
+--- !u!114 &1958432235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1958432214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2be730dcbc0eef147a8cfa024fcab3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  woodCutting:
+    level: 0
+    experience: 0
+    skillType: 0
+  rockCutting:
+    level: 0
+    experience: 0
+    skillType: 1
+  fighting:
+    level: 0
+    experience: 0
+    skillType: 2
 --- !u!114 &1971782635 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: -6943521337929088357, guid: f3393a28c02d8fc40a30a1757a817ecd, type: 3}
@@ -33743,6 +33769,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1495767637585823976, guid: b2191ae52ca6bdb4bb07776da7ae428d, type: 3}
+      propertyPath: spawnCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1495767637585823976, guid: b2191ae52ca6bdb4bb07776da7ae428d, type: 3}
+      propertyPath: spawnLimit
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1495767637585823976, guid: b2191ae52ca6bdb4bb07776da7ae428d, type: 3}
+      propertyPath: probToSpawn
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1495767637585823976, guid: b2191ae52ca6bdb4bb07776da7ae428d, type: 3}
       propertyPath: spawnObjects.Array.data[0]
       value: 

@@ -5,6 +5,9 @@ using UnityEngine;
 public class ToolAction : ScriptableObject
 {
     public int energyCost = 0;
+    public SkillType skillType;
+    public int experienceGain = 10;
+
     public virtual bool OnApply(Vector2 worldPoint)
     {
         return true;
