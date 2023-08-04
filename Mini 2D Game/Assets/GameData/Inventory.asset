@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Inventory
   m_EditorClassIdentifier: 
   slots:
-  - item: {fileID: 11400000, guid: 28bb7d623e62e464484abd6ab4124870, type: 2}
-    count: 20
+  - item: {fileID: 11400000, guid: 5111204387f3aae46b842e502bf28ab0, type: 2}
+    count: 988
   - item: {fileID: 11400000, guid: b44731f70cf9bb649bcf2f7188ccfd02, type: 2}
     count: 5
   - item: {fileID: 11400000, guid: ec2dec79abdec9d49abf8a11b316a24f, type: 2}
@@ -24,7 +24,7 @@ MonoBehaviour:
   - item: {fileID: 11400000, guid: e9f28486a707dd842ad18312d5263ab4, type: 2}
     count: 10
   - item: {fileID: 11400000, guid: e7af3443268251145b1465126ace22bc, type: 2}
-    count: 53
+    count: 43
   - item: {fileID: 11400000, guid: 0be73ed2141e6544099ca999aed4527e, type: 2}
     count: 4
   - item: {fileID: 11400000, guid: 770f15343fe77744c801abd4e0433397, type: 2}
@@ -32,13 +32,13 @@ MonoBehaviour:
   - item: {fileID: 11400000, guid: 52642ade29b72e24d97a6466c1d0efae, type: 2}
     count: 998
   - item: {fileID: 11400000, guid: 01addc2fcd971714080ed07c10062d4e, type: 2}
+    count: 0
+  - item: {fileID: 11400000, guid: 37b4eea91f1f08d4e9acb7eb34cdbd8e, type: 2}
     count: 1
-  - item: {fileID: 11400000, guid: 01addc2fcd971714080ed07c10062d4e, type: 2}
+  - item: {fileID: 11400000, guid: cd874be0faa7bed42ab70446f9870f40, type: 2}
+    count: 4
+  - item: {fileID: 0}
     count: 0
-  - item: {fileID: 11400000, guid: b44731f70cf9bb649bcf2f7188ccfd02, type: 2}
-    count: 0
-  - item: {fileID: 11400000, guid: 01addc2fcd971714080ed07c10062d4e, type: 2}
-    count: 0
-  - item: {fileID: 11400000, guid: b44731f70cf9bb649bcf2f7188ccfd02, type: 2}
-    count: 0
+  - item: {fileID: 11400000, guid: 28bb7d623e62e464484abd6ab4124870, type: 2}
+    count: 20
   isChanged: 0

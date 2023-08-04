@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class ObjectSpawner : MonoBehaviour
 {
-    [SerializeField] float spawnArea_height = 1f;
-    [SerializeField] float spawnArea_width = 1f;
+    [SerializeField] float spawnArea_height = 5f;
+    [SerializeField] float spawnArea_width = 5f;
 
     [SerializeField] GameObject[] spawnObjects;
     int length;
     int curSpawnNumber = 0;
+    
     [SerializeField] float probToSpawn = 0.5f;
     [SerializeField] int spawnCount = 1;
 
@@ -39,17 +40,26 @@ public class ObjectSpawner : MonoBehaviour
             return;
 
         for (int i = 0; i < spawnCount; ++i)
-        {            
+        {
             /// Spawn objects
             /// Khi instantiate thì phải dùng prefab
             GameObject go = Instantiate(spawnObjects[Random.Range(0, length)]);
-            Transform transform = go.transform;
+            Transform transformGO = go.transform;
 
             Vector3 position = transform.position;
             position.x += UnityEngine.Random.Range(-spawnArea_width, spawnArea_width);
             position.y += UnityEngine.Random.Range(-spawnArea_height, spawnArea_height);
-            transform.position = position;
+            transformGO.position = position;
             ///
+
+            //Vector3 position = transform.position;
+            //position.x += UnityEngine.Random.Range(-spawnArea_width, spawnArea_width);
+            //position.y += UnityEngine.Random.Range(-spawnArea_height, spawnArea_height);
+            ////transform.position = position;
+            //go.transform.position = position;
+
+            //GameObject go = Instantiate(spawnObjects[Random.Range(0, length)]);
+            ////Transform transform = go.transform;
 
             ++curSpawnNumber;
 

@@ -15,6 +15,19 @@ public class IconHighlight : MonoBehaviour
     bool canSelect = true;
     bool isShow;
 
+    Tilemap TargetTilemap
+    {
+        get
+        {
+            if (targetTilemap == null)
+            {
+                targetTilemap = GameObject.Find("Background").GetComponent<Tilemap>();
+            }
+            return targetTilemap;
+        }
+    }
+
+
     public bool CanSelect
     {
         set
@@ -37,8 +50,8 @@ public class IconHighlight : MonoBehaviour
 
     private void Update()
     {
-        targetPosition = targetTilemap.CellToWorld(cellPosition);
-        transform.position = targetPosition + targetTilemap.cellSize / 2;
+        targetPosition = TargetTilemap.CellToWorld(cellPosition);
+        transform.position = targetPosition + TargetTilemap.cellSize / 2;
     }
 
     internal void Set(Sprite icon)

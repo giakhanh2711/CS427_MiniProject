@@ -29,10 +29,20 @@ public class TilemapReadController : MonoBehaviour
 
     public Vector3Int GetGridPostition(Vector2 position, bool mousePosition)
     {
+        if (tilemap == null)
+        {
+            tilemap = GameObject.Find("Background").GetComponent<Tilemap>();
+        }
+
+        if (tilemap == null)
+            return Vector3Int.zero;
+
         Vector3 worldPos;
 
         if (mousePosition)
         {
+            //Cinemachine.CinemachineBrain currentCamera = Camera.main.GetComponent<Cinemachine.CinemachineBrain>();
+            //worldPos = currentCamera.GetComponent<CinemachineVirtualCamera>().
             worldPos = Camera.main.ScreenToWorldPoint(position);
         }
         else
@@ -47,6 +57,14 @@ public class TilemapReadController : MonoBehaviour
         
     public TileBase GetTileBase(Vector3Int gridPos)
     {
+        if (tilemap == null)
+        {
+            tilemap = GameObject.Find("Background").GetComponent<Tilemap>();
+        }
+
+        if (tilemap == null)
+            return null;
+
         TileBase tile = tilemap.GetTile(gridPos);
 
         return tile;
