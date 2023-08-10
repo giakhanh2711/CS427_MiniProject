@@ -9,6 +9,7 @@ public class PlaceableObject
     public Item placedItem;
     public Transform targetObject;
     public Vector3Int positionOnGrid;
+    public string objectState; // Serialized json string which contains the state of the object
 
     public PlaceableObject(Item item, Vector3Int pos)
     {

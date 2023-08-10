@@ -6,7 +6,7 @@ using UnityEngine.Tilemaps;
 
 public class CharacterUseToolsController : MonoBehaviour
 {
-    CharacterLevel characterLevel;
+    //CharacterLevel characterLevel;
     CharacterController2D characterController;
     Character character;
     Rigidbody2D rigidbody;
@@ -36,7 +36,7 @@ public class CharacterUseToolsController : MonoBehaviour
         toolbarController = GetComponent<ToolbarController>();
         animator = GetComponent<Animator>();
         attackController = GetComponent<AttackController>();
-        characterLevel = GetComponent<CharacterLevel>();
+        //characterLevel = GetComponent<CharacterLevel>();
     }
 
     private void Update()
@@ -78,7 +78,7 @@ public class CharacterUseToolsController : MonoBehaviour
         if (item.isWeapon == false)
             return;
 
-        EnergyCost(weaponEnergyCost);
+        CharacterTakeEnergyCost(weaponEnergyCost);
 
         Vector2 position = rigidbody.position + characterController.lastMotionVector * offsetDistance;
 
@@ -126,14 +126,15 @@ public class CharacterUseToolsController : MonoBehaviour
             return false;
         }
 
-        EnergyCost(GetEnergyCost(item.onAction));
+        CharacterTakeEnergyCost(GetEnergyCost(item.onAction));
 
         animator.SetTrigger("act");
         bool isComplete = item.onAction.OnApply(position);
 
         if (isComplete)
         {
-            characterLevel.AddExperience(item.onAction.skillType, item.onAction.experienceGain); ;
+            //characterLevel.AddStar(item.onAction.starGain);
+            character.ReceiveStar(item.onAction.starGain);
 
             if (item.onItemUsed != null)
             {
@@ -168,14 +169,15 @@ public class CharacterUseToolsController : MonoBehaviour
                 return;
             }
 
-            EnergyCost(GetEnergyCost(item.onTilemapAction));
+            CharacterTakeEnergyCost(GetEnergyCost(item.onTilemapAction));
 
             animator.SetTrigger("act");
             bool isComplete = item.onTilemapAction.OnApplyToTilemap(selectedTilePosition, tilemapReadController, item);
 
             if (isComplete)
             {
-                characterLevel.AddExperience(item.onTilemapAction.skillType, item.onTilemapAction.experienceGain); ;
+                //characterLevel.AddStar(item.onTilemapAction.starGain);
+                character.ReceiveStar(item.onTilemapAction.starGain);
 
                 if (item.onItemUsed != null)
                 {
@@ -190,7 +192,7 @@ public class CharacterUseToolsController : MonoBehaviour
     private int GetEnergyCost(ToolAction action)
     {
         int energyCost = action.energyCost;
-        energyCost -= characterLevel.GetLevel(action.skillType); // Càng lên level, energy cost càng giảm
+        energyCost -= character.GetLevel(); // Energy cost khi lên level giảm bằng level
 
         if (energyCost < 0)
             energyCost = 1;
@@ -208,7 +210,7 @@ public class CharacterUseToolsController : MonoBehaviour
         onTilePickUp.OnApplyToTilemap(selectedTilePosition, tilemapReadController, null);
     }
 
-    private void EnergyCost(int energyCost)
+    private void CharacterTakeEnergyCost(int energyCost)
     {
         character.GetTired(energyCost);
 

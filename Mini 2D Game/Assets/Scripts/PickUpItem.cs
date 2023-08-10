@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class PickUpItem : MonoBehaviour
 {
-    Transform player; // Player of the game
+    Transform playerTransform; // Player of the game
+    Character player;
+    //CharacterLevel playerLevel;
+
     [SerializeField] float speed = 5f; // Speed of the objects move toward the player
     [SerializeField] float pickUpDistance = 1.5f; // Distance that player can pick up
 
@@ -13,25 +16,29 @@ public class PickUpItem : MonoBehaviour
 
     private void Awake()
     {
-        player = GameManager.instance.player.transform;
+        playerTransform = GameManager.instance.player.transform;
+        player = GameManager.instance.player.GetComponent<Character>();
+        //playerLevel = GameManager.instance.player.GetComponent<CharacterLevel>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        float distance = Vector3.Distance(transform.position, player.position);
+        float distance = Vector3.Distance(transform.position, playerTransform.position);
 
         if (distance > pickUpDistance)
         {
             return;
         }
-        transform.position = Vector3.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, playerTransform.position, speed * Time.deltaTime);
         
         if (distance < 0.1)
         {
             if (GameManager.instance.inventory != null)
             {
                 GameManager.instance.inventory.Add(item, count);
+                player.ReceiveStar(item.starGainWhenPickup);
+                //playerLevel.AddStar(item.starGainWhenPickup);
             }
             Destroy(gameObject);
         }

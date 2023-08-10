@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CropSeed
   m_EditorClassIdentifier: 
   timeToGrow: 20
-  yield: {fileID: 11400000, guid: e7af3443268251145b1465126ace22bc, type: 2}
+  yield: {fileID: 11400000, guid: aa20d26df2eac1547964aad669fff2d9, type: 2}
   count: 5
   sprites:
   - {fileID: 1996110421, guid: 225cb8c4208ef384bbb76c92cd52f389, type: 3}

@@ -21,3 +21,9 @@ MonoBehaviour:
   crop: {fileID: 0}
   isIconHighlight: 1
   itemPrefab: {fileID: 554941150220693945, guid: 16e5f1f2c30d43b4bbd3c802339829be, type: 3}
+  isWeapon: 0
+  damageAmount: 10
+  price: 100
+  canBeSold: 1
+  starGainWhenPickup: 0
+  isPlaceable: 1

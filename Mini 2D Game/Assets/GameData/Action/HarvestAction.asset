@@ -12,3 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05368558ce6a315489cd6f67bf686c2e, type: 3}
   m_Name: HarvestAction
   m_EditorClassIdentifier: 
+  energyCost: 10
+  skillType: 0
+  starGain: 10

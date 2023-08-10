@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c19876e292fce804d9284a9e7c45bd14, type: 3}
   m_Name: CropSunflower
   m_EditorClassIdentifier: 
-  timeToGrow: 10
+  timeToGrow: 27
   yield: {fileID: 11400000, guid: cd874be0faa7bed42ab70446f9870f40, type: 2}
   count: 1
   sprites:

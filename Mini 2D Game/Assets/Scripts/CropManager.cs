@@ -11,7 +11,7 @@ public class CropTile
     public int growStage;
     public Crop crop;
     public SpriteRenderer renderer;
-    public float damage;
+    //public float damage;
     public Vector3Int position;
 
     public bool isComplete
@@ -29,12 +29,13 @@ public class CropTile
         growStage = 0;
         crop = null;
         renderer.gameObject.SetActive(false);
-        damage = 0;
+        //damage = 0;
     }
 }
 
 public class CropManager : TimeAgent
 {
+    [SerializeField] TileBase plowable;
     [SerializeField] TileBase plowed;
     [SerializeField] TileBase seeded;
     [SerializeField] Tilemap targetTilemap;
@@ -74,14 +75,14 @@ public class CropManager : TimeAgent
                 continue;
             }
 
-            cropTile.damage += 0.02f;
+            //cropTile.damage += 0.02f;
 
-            if (cropTile.damage > 1f)
-            {
-                cropTile.Harvested();
-                TargetTilemap.SetTile(cropTile.position, plowed);
-                continue;
-            }
+            //if (cropTile.damage > 1f)
+            //{
+            //    cropTile.Harvested();
+            //    TargetTilemap.SetTile(cropTile.position, plowed);
+            //    continue;
+            //}
 
             if (cropTile.isComplete)
             {
@@ -93,6 +94,7 @@ public class CropManager : TimeAgent
 
             if (cropTile.growTimer >= cropTile.crop.growthStageTime[cropTile.growStage])
             {
+                TargetTilemap.SetTile(cropTile.position, plowed);
                 cropTile.renderer.gameObject.SetActive(true);
                 cropTile.renderer.sprite = cropTile.crop.sprites[cropTile.growStage];
 
@@ -170,13 +172,15 @@ public class CropManager : TimeAgent
 
         if (cropTile.isComplete)
         {
-            ItemSpawnManager.instance.SpawnItem(
-                TargetTilemap.CellToWorld(gridPosition),
-                cropTile.crop.yield,
-                cropTile.crop.count
-                );
+            //ItemSpawnManager.instance.SpawnItem(
+            //    TargetTilemap.CellToWorld(gridPosition),
+            //    cropTile.crop.yield,
+            //    cropTile.crop.count
+            //    );
 
-            TargetTilemap.SetTile(gridPosition, plowed);
+            //TargetTilemap.SetTile(gridPosition, plowed);
+            GameManager.instance.inventory.Add(cropTile.crop.yield, cropTile.crop.count);
+            TargetTilemap.SetTile(gridPosition, plowable);
 
             cropTile.Harvested();
         }

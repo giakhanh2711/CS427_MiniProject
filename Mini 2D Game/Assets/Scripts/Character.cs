@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using static Cinemachine.DocumentationSortingAttribute;
 
 [Serializable]
 public class Stat
@@ -36,17 +38,34 @@ public class Stat
 
 public class Character : MonoBehaviour, IDamageable
 {
+    // HP
     public Stat hp;
     [SerializeField] StatusBar hpBar;
-
+    
+    // ENERGY
     public Stat stamina;
     [SerializeField] StatusBar staminaBar;
+
+    // STAR
+    public Stat star;
+    [SerializeField] StatusBar starBar;
+
+    public int playerLevel = 1;
+    [SerializeField] TextMeshProUGUI textLevel;
     
     public bool isDead;
     public bool isExhausted;
 
     DisableControl disableControl;
     PlayerRespawn playerRespawn;
+
+    public int StartForNextLevel
+    {
+        get
+        {
+            return playerLevel * 500;
+        }
+    }
 
     private void Awake()
     {
@@ -58,6 +77,18 @@ public class Character : MonoBehaviour, IDamageable
     {
         UpdateHPBar();
         UpdateStaminaBar();
+        UpdateStarBar();
+        UpdateTextLevel();
+    }
+
+    public void UpdateTextLevel()
+    {
+        textLevel.text = "Level " + playerLevel.ToString();
+    }
+
+    public void UpdateStarBar()
+    {
+        starBar.Set(star.curVal, star.maxVal);
     }
 
     private void UpdateStaminaBar()
@@ -68,6 +99,28 @@ public class Character : MonoBehaviour, IDamageable
     private void UpdateHPBar()
     {
         hpBar.Set(hp.curVal, hp.maxVal);
+    }
+
+    public void ReceiveStar(int amount)
+    {
+        star.Add(amount);
+
+        UpdateStarBar();
+
+        if (star.curVal >= StartForNextLevel)
+        {
+            star.Subtract(StartForNextLevel);
+            playerLevel += 1;
+            star.maxVal = StartForNextLevel;
+            
+            UpdateStarBar();
+            UpdateTextLevel();
+        }
+    }
+
+    public int GetLevel()
+    {
+        return playerLevel;
     }
 
     public void TakeDamage(int amount)
@@ -131,26 +184,6 @@ public class Character : MonoBehaviour, IDamageable
     {
         stamina.SetToMax();
         UpdateStaminaBar();
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            TakeDamage(10);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            Heal(10);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            GetTired(10);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            GetRest(10);
-        }
     }
 
     public void CalculateDamage(ref int damage)

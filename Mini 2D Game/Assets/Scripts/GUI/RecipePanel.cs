@@ -20,6 +20,9 @@ public class RecipePanel : PanelItem
         if (id >= recipeList.craftingRecipes.Count)
             return;
 
+        if (crafting == null)
+            crafting = GameObject.Find("Player").GetComponent<Crafting>();
+
         crafting.Craft(recipeList.craftingRecipes[id]);
     }
 }

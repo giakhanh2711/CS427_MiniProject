@@ -18,4 +18,6 @@ public class Item : ScriptableObject
     public int damageAmount = 10;
     public int price = 100;
     public bool canBeSold = true;
+    public int starGainWhenPickup = 5;
+    public bool isPlaceable = false;
 }

@@ -12,3 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7f1fbf2fb48f0d4bbc57063a55522b3, type: 3}
   m_Name: Placing Objects Action
   m_EditorClassIdentifier: 
+  energyCost: 10
+  skillType: 0
+  starGain: 10

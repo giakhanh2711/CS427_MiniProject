@@ -31,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5120348333995119103
 MonoBehaviour:
@@ -57,11 +57,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0809f399b39ad684e85508ef43825485, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnArea_height: 5
-  spawnArea_width: 5
+  spawnArea_height: 15
+  spawnArea_width: 15
   spawnObjects:
-  - {fileID: 584808320740289502, guid: 1a1ec4e9ba7928e4d9b0c896d26afc6a, type: 3}
+  - {fileID: 4721845874043242596, guid: e4e0e1237c6f5484c92c99c499d54206, type: 3}
   - {fileID: 5783275458061797680, guid: d5fd4d178328aed42ade6fc0a4de6a21, type: 3}
   probToSpawn: 1
-  spawnCount: 3
+  spawnCount: 20
   isSpawnOneTime: 1
+  spawnLimit: 20

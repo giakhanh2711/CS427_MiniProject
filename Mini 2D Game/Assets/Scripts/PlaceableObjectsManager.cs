@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using static UnityEditor.Progress;
+//using static UnityEditor.Progress;
 
 public class PlaceableObjectsManager : MonoBehaviour
 {
@@ -21,6 +21,19 @@ public class PlaceableObjectsManager : MonoBehaviour
     {
         for (int i = 0; i < placeableObjectsContainer.placeableObjects.Count; ++i)
         {
+            if (placeableObjectsContainer.placeableObjects[i].targetObject == null)
+            {
+                continue;
+            }
+
+            IPersistant persistant = placeableObjectsContainer.placeableObjects[i].targetObject.GetComponent<IPersistant>();
+
+            if (persistant != null)
+            {
+                string jsonString = persistant.Read();
+                placeableObjectsContainer.placeableObjects[i].objectState = jsonString;
+            }
+
             placeableObjectsContainer.placeableObjects[i].targetObject = null;
         }
     }
@@ -41,6 +54,12 @@ public class PlaceableObjectsManager : MonoBehaviour
         Vector3 position = targetTilemap.CellToWorld(placeableObject.positionOnGrid) + targetTilemap.cellSize / 2;
         position -= Vector3.forward * 0.1f;
         gameObject.transform.position = position;
+
+        IPersistant persistant = gameObject.GetComponent<IPersistant>();
+        if (persistant != null)
+        {
+            persistant.Load(placeableObject.objectState);
+        }
 
         placeableObject.targetObject = gameObject.transform;
     }

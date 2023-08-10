@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Hoed_Tile
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: 775197199, guid: 5d8699ae881bc7f4d9965ce787611689, type: 3}
-  m_Color: {r: 0.7264151, g: 0.70859736, b: 0.70859736, a: 1}
+  m_Color: {r: 0.49056602, g: 0.48778924, b: 0.48778924, a: 1}
   m_Transform:
     e00: 1
     e01: 0

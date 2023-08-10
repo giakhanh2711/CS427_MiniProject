@@ -1,23 +1,26 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
+using static UnityEditor.Progress;
 
 public class ItemDragAndDropController : MonoBehaviour
 {
     public ItemSlot itemSlot;
     [SerializeField] GameObject dragIcon;
     RectTransform dragIconTransform;
-    Image dragIconImage;
+    UnityEngine.UI.Image dragIconImage;
 
     // Start is called before the first frame update
     void Start()
     {
         itemSlot = new ItemSlot();
         dragIconTransform = dragIcon.GetComponent<RectTransform>();
-        dragIconImage = dragIcon.GetComponent<Image>();
+        dragIconImage = dragIcon.GetComponent<UnityEngine.UI.Image>();
     }
 
     private void Update()
@@ -30,10 +33,22 @@ public class ItemDragAndDropController : MonoBehaviour
             {
                 if (EventSystem.current.IsPointerOverGameObject() == false)
                 {
+                    Debug.Log("aaaaaaaaaaaaaaaaaaaaaa");
+
+                    if (itemSlot.item.isPlaceable == false)
+                    {
+                        itemSlot.Clear();
+                        dragIcon.SetActive(false);
+                        return;
+                    }
+
                     Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                     worldPosition.z = 0;
+
                     
-                    ItemSpawnManager.instance.SpawnItem(worldPosition, itemSlot.item, itemSlot.count);
+                    //ItemSpawnManager.instance.SpawnItem(worldPosition, itemSlot.item, itemSlot.count);
+                    Instantiate(itemSlot.item.itemPrefab, worldPosition, Quaternion.identity);
+                    GameManager.instance.inventory.Remove(itemSlot.item);
 
                     itemSlot.Clear();
                     dragIcon.SetActive(false);
@@ -48,7 +63,7 @@ public class ItemDragAndDropController : MonoBehaviour
         if (this.itemSlot.item == null)
         {
             this.itemSlot.Copy(itemSlot);
-            itemSlot.Clear();
+            //itemSlot.Clear();
         }
         else
         {
@@ -59,11 +74,29 @@ public class ItemDragAndDropController : MonoBehaviour
             }
             else
             {
-                Item iTmp = itemSlot.item;
-                int cTmp = itemSlot.count;
+                for (int i = 0; i < GameManager.instance.inventory.slots.Count; ++i)
+                {
+                    if (GameManager.instance.inventory.slots[i].item == this.itemSlot.item)
+                    {
+                        GameManager.instance.inventory.slots[i].item = null;
+                        GameManager.instance.inventory.slots[i].count = 0;
+                    }
+                }
 
-                itemSlot.Copy(this.itemSlot);
-                this.itemSlot.Set(iTmp, cTmp);
+                if (itemSlot.item == null)
+                {
+                    itemSlot.Copy(this.itemSlot);
+                    this.itemSlot.Clear();
+                }
+                else
+                {
+
+                    Item iTmp = itemSlot.item;
+                    int cTmp = itemSlot.count;
+
+                    itemSlot.Copy(this.itemSlot);
+                    this.itemSlot.Set(iTmp, cTmp);
+                }
             }
         }
         UpdateIcon();
@@ -99,6 +132,9 @@ public class ItemDragAndDropController : MonoBehaviour
     internal void RemoveItem(int count = 1)
     {
         if (itemSlot == null)
+            return;
+
+        if (itemSlot.item == null)
             return;
 
         if (itemSlot.item.stackable)

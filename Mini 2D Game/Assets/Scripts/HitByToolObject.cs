@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class HitByToolObject : MonoBehaviour
 {
+    public int starGain = 10;
+
     public virtual void Hit()
     {
 
