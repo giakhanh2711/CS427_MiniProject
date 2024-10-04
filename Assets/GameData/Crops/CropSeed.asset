@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c19876e292fce804d9284a9e7c45bd14, type: 3}
+  m_Name: CropSeed
+  m_EditorClassIdentifier: 
+  timeToGrow: 50
+  yield: {fileID: 11400000, guid: aa20d26df2eac1547964aad669fff2d9, type: 2}
+  count: 5
+  sprites:
+  - {fileID: 1996110421, guid: 225cb8c4208ef384bbb76c92cd52f389, type: 3}
+  - {fileID: -1425724284, guid: 225cb8c4208ef384bbb76c92cd52f389, type: 3}
+  - {fileID: 809062800, guid: 225cb8c4208ef384bbb76c92cd52f389, type: 3}
+  - {fileID: 1186770008, guid: 225cb8c4208ef384bbb76c92cd52f389, type: 3}
+  - {fileID: -1301357486, guid: 225cb8c4208ef384bbb76c92cd52f389, type: 3}
+  growthStageTime: 0a000000140000001e0000002800000032000000
+  seededTile: {fileID: 11400000, guid: a094060988965f04095183bc93f77b72, type: 2}

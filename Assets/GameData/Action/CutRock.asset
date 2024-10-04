@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 402ea7c48502e7d4cbc31d58cfe810f1, type: 3}
+  m_Name: CutRock
+  m_EditorClassIdentifier: 
+  energyCost: 30
+  skillType: 1
+  starGain: 20
+  sizeOfInteractableArea: 1
+  resourceTypes: 02000000

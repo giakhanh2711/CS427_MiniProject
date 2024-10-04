@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63ac106173d9d4d478ebc90f239b329a, type: 3}
+  m_Name: GoldBarRecipe
+  m_EditorClassIdentifier: 
+  elements:
+  - item: {fileID: 11400000, guid: a94593cc57b92d94195e61efb2a31536, type: 2}
+    count: 5
+  output:
+    item: {fileID: 11400000, guid: b9bfd82584228e9449fafab3fbc0f8a9, type: 2}
+    count: 1
+  timeToProcess: 100

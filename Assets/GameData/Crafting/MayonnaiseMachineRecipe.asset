@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af61f6fdc2ead7c4a9f0095da22e966e, type: 3}
+  m_Name: MayonnaiseMachineRecipe
+  m_EditorClassIdentifier: 
+  elements:
+  - item: {fileID: 11400000, guid: 28bb7d623e62e464484abd6ab4124870, type: 2}
+    count: 15
+  - item: {fileID: 11400000, guid: 75d585777ff8bd447bbeb6dde0a546d9, type: 2}
+    count: 15
+  output:
+    item: {fileID: 11400000, guid: 3ecfd31f3b9587a4899076870a4e501f, type: 2}
+    count: 1

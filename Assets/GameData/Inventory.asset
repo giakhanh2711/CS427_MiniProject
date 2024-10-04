@@ -1,0 +1,93 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 018a3615c08344d479e0f7d8c6efc458, type: 3}
+  m_Name: Inventory
+  m_EditorClassIdentifier: 
+  slots:
+  - item: {fileID: 11400000, guid: b44731f70cf9bb649bcf2f7188ccfd02, type: 2}
+    count: 5
+  - item: {fileID: 11400000, guid: ec2dec79abdec9d49abf8a11b316a24f, type: 2}
+    count: 1
+  - item: {fileID: 11400000, guid: e9f28486a707dd842ad18312d5263ab4, type: 2}
+    count: 10
+  - item: {fileID: 11400000, guid: 9326f628c01fba040b40fbd8b0eeac8c, type: 2}
+    count: 0
+  - item: {fileID: 11400000, guid: 5111204387f3aae46b842e502bf28ab0, type: 2}
+    count: 5
+  - item: {fileID: 11400000, guid: e7af3443268251145b1465126ace22bc, type: 2}
+    count: 5
+  - item: {fileID: 11400000, guid: f92bbddf145064c49b9dfd24ca2f7a99, type: 2}
+    count: 5
+  - item: {fileID: 11400000, guid: 9f79a884ed2e31c4083763fc05d3b8d7, type: 2}
+    count: 5
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 11400000, guid: 28bb7d623e62e464484abd6ab4124870, type: 2}
+    count: 3
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  isChanged: 0
+  unLanchedItems:
+  - item: {fileID: 11400000, guid: f92bbddf145064c49b9dfd24ca2f7a99, type: 2}
+    count: 5
+  - item: {fileID: 11400000, guid: 9f79a884ed2e31c4083763fc05d3b8d7, type: 2}
+    count: 5

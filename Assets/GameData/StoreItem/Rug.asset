@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2941f14d73a88141a10fd72c26838b7, type: 3}
+  m_Name: Rug
+  m_EditorClassIdentifier: 
+  Name: Rug
+  stackable: 1
+  icon: {fileID: 21300000, guid: 254582551ab953d4bb52e1b845bca6a2, type: 3}
+  onAction: {fileID: 0}
+  onTilemapAction: {fileID: 11400000, guid: deeae88e107f89643bc5f123a66fdb21, type: 2}
+  onItemUsed: {fileID: 11400000, guid: deeae88e107f89643bc5f123a66fdb21, type: 2}
+  crop: {fileID: 0}
+  isIconHighlight: 1
+  itemPrefab: {fileID: 2040756453940790666, guid: 3498b4012d6194048a66517aa16bb45a, type: 3}
+  isWeapon: 0
+  damageAmount: 10
+  price: 50
+  canBeSold: 0
+  starGainWhenPickup: 0
+  isPlaceable: 1

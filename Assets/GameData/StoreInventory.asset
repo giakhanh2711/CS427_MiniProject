@@ -1,0 +1,97 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 018a3615c08344d479e0f7d8c6efc458, type: 3}
+  m_Name: StoreInventory
+  m_EditorClassIdentifier: 
+  slots:
+  - item: {fileID: 11400000, guid: e7af3443268251145b1465126ace22bc, type: 2}
+    count: 0
+  - item: {fileID: 11400000, guid: 5111204387f3aae46b842e502bf28ab0, type: 2}
+    count: 0
+  - item: {fileID: 11400000, guid: 94eb7adf63e0a124da1e830d15abfdcb, type: 2}
+    count: 0
+  - item: {fileID: 11400000, guid: da563221b5461144298e179e1dca9043, type: 2}
+    count: 0
+  - item: {fileID: 11400000, guid: 6fcbd8fd0863f3b46864e23d2c64fce4, type: 2}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  isChanged: 0
+  unLanchedItems:
+  - item: {fileID: 11400000, guid: 04801ddc4f93a6c4389c807e045d633a, type: 2}
+    count: 0
+  - item: {fileID: 11400000, guid: f92bbddf145064c49b9dfd24ca2f7a99, type: 2}
+    count: 0
+  - item: {fileID: 11400000, guid: 9f79a884ed2e31c4083763fc05d3b8d7, type: 2}
+    count: 0
+  - item: {fileID: 11400000, guid: 588c476c832da6a4ca54dae8a0a0eca3, type: 2}
+    count: 0

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c19876e292fce804d9284a9e7c45bd14, type: 3}
+  m_Name: CropPumpkin
+  m_EditorClassIdentifier: 
+  timeToGrow: 100
+  yield: {fileID: 11400000, guid: ecdfd6b3f639e454d84142a36abcc4f8, type: 2}
+  count: 5
+  sprites:
+  - {fileID: 21300000, guid: b9967701760279449b2bb25d9ebf2f27, type: 3}
+  - {fileID: 21300000, guid: 87d1c7657e638f2488bb396cc2e12746, type: 3}
+  - {fileID: 21300000, guid: b5c27482f27e78945a57306d2a53163f, type: 3}
+  - {fileID: 21300000, guid: 9998e42cf446cc949a3bffc1e5fc3460, type: 3}
+  - {fileID: 21300000, guid: df3100f87110d7b4d9a6198fe22557a5, type: 3}
+  growthStageTime: 14000000280000003c0000005000000064000000
+  seededTile: {fileID: 11400000, guid: 15b052982d79aef4cbe3a35d7715c5a9, type: 2}
