@@ -1,5 +1,5 @@
 # DreamyG
-[:movie_camera: **See the Trailer**](https://youtu.be/2MogaRpMsvs?si=57IQ6RIBJ45LmifE)
+[:movie_camera: **This is the demo of the game on YouTube**](https://youtu.be/2MogaRpMsvs?si=57IQ6RIBJ45LmifE)
 
 ## Game Introduction
 Our game idea is based on Stardew Valley Game. Our game belongs to the role-playing genre. In this game, the player will become a farmer who takes care of their farm every day. Because our game is a farming game, players will do things such as crop, clean the garden, crafting,...
