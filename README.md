@@ -1,10 +1,11 @@
-# CS427_MiniProject
+# DreamyG
+[:movie_camera: **See the Trailer**](https://youtu.be/2MogaRpMsvs?si=57IQ6RIBJ45LmifE)
 
 ## Game Introduction
 Our game idea is based on Stardew Valley Game. Our game belongs to the role-playing genre. In this game, the player will become a farmer who takes care of their farm every day. Because our game is a farming game, players will do things such as crop, clean the garden, crafting,...
 
 <p align="center">
-    <img src="Pictures/Intro.png">
+    <img src="Pictures/Intro.png", width="700" height="394">
 </p>
 
 ## Unity version
